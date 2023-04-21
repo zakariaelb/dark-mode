@@ -2,11 +2,13 @@ import React from "react";
 export default function Box(props){
     const [on, setOn] = React.useState(props.on)
     const styles = {
-        backgroundColor: props.on ? "#222222" : "transparent"
+        backgroundColor: on ? "#222222" : "transparent"
     }
     function toggole() {
-        setOn(prevOn + !prevOn)
-    }
+        setOn(prevOn => !prevOn)
+      
+    }  
+    //console.log(toggole)
     return (
         <div style={styles} className="box" onClick={toggole}></div>
     )
